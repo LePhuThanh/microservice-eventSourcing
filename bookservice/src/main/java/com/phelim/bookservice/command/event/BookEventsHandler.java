@@ -8,6 +8,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 public class BookEventsHandler {
     @Autowired
@@ -18,7 +20,36 @@ public class BookEventsHandler {
         BeanUtils.copyProperties(bookCreateEvent, book);
 
         bookRepository.save(book);
+    }
 
+    @EventHandler
+    public void on(BookUpdatedEvent bookUpdatedEvent){
+        Optional<Book> oldBook = bookRepository.findById(bookUpdatedEvent.getId());
+        if(oldBook.isPresent()){
+            Book book = oldBook.get();
+            book.setName(bookUpdatedEvent.getName());
+            book.setAuthor(bookUpdatedEvent.getAuthor());
+            book.setIsReady(bookUpdatedEvent.getIsReady());
 
+            bookRepository.save(book);
+        }
+//        Java8
+//        bookRepository.findById(bookUpdatedEvent.getId()).ifPresent(book -> {
+//            book.setName(bookUpdatedEvent.getName());
+//            book.setAuthor(bookUpdatedEvent.getAuthor());
+//            book.setIsReady(bookUpdatedEvent.getIsReady());
+//
+//            bookRepository.save(book);
+//        });
+    }
+
+    @EventHandler
+    public void on(BookDeletedEvent bookDeletedEvent){
+        Optional<Book> oldBook = bookRepository.findById(bookDeletedEvent.getId());
+        if(oldBook.isPresent()){
+            bookRepository.delete(oldBook.get());
+        }
+//        Java8
+//        bookRepository.findById(bookDeletedEvent.getId()).ifPresent(bookRepository::delete);
     }
 }
