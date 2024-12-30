@@ -1,18 +1,15 @@
-package com.phelim.bookservice.command.command;
+package com.phelim.bookservice.command.event;
 
-import org.axonframework.modelling.command.TargetAggregateIdentifier;
-
-public class CreateBookCommand {
-    @TargetAggregateIdentifier
+public class BookCreateEvent {
     private String id;
     private String name;
     private String author;
     private Boolean isReady;
 
-    public CreateBookCommand() {
+    public BookCreateEvent() {
     }
 
-    public CreateBookCommand(String id, String name, String author, Boolean isReady) {
+    public BookCreateEvent(String id, String name, String author, Boolean isReady) {
         this.id = id;
         this.name = name;
         this.author = author;
