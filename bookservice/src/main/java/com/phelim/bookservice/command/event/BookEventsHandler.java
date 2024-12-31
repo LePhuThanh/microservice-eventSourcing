@@ -50,6 +50,7 @@ public class BookEventsHandler {
             bookRepository.delete(oldBook.get());
         }
 //        Java8
+//        bookRepository.findById(bookDeletedEvent.getId()).ifPresent(book -> bookRepository.delete(book));
 //        bookRepository.findById(bookDeletedEvent.getId()).ifPresent(bookRepository::delete);
     }
 }

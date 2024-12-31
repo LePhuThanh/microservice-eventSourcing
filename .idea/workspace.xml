@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af461105-81a2-441d-905d-f94c8df02bb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/aggregate/BookAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/aggregate/BookAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/controller/BookCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/controller/BookCommandController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/event/BookEventsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/event/BookEventsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/model/BookRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/model/BookRequestModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +52,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
 }</component>

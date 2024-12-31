@@ -1,16 +1,15 @@
-package com.phelim.bookservice.command.model;
+package com.phelim.bookservice.query.model;
 
-
-public class BookRequestModel {
+public class BookResponseModel {
     private String id;
     private String name;
     private String author;
     private Boolean isReady;
 
-    public BookRequestModel() {
+    public BookResponseModel() {
     }
 
-    public BookRequestModel(String id, String name, String author, Boolean isReady) {
+    public BookResponseModel(String id, String name, String author, Boolean isReady) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -48,5 +47,4 @@ public class BookRequestModel {
     public void setIsReady(Boolean ready) {
         this.isReady = ready;
     }
-
 }
