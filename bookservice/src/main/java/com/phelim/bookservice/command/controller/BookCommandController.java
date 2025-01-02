@@ -4,6 +4,7 @@ import com.phelim.bookservice.command.command.CreateBookCommand;
 import com.phelim.bookservice.command.command.DeleteBookCommand;
 import com.phelim.bookservice.command.command.UpdateBookCommand;
 import com.phelim.bookservice.command.model.BookRequestModel;
+import jakarta.validation.Valid;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class BookCommandController {
     private CommandGateway commandGateway;
 
     @PostMapping
-    public String addBook(@RequestBody BookRequestModel bookRequestModel){
+    public String addBook(@Valid @RequestBody BookRequestModel bookRequestModel){
         CreateBookCommand command = new CreateBookCommand(UUID.randomUUID().toString(), bookRequestModel.getName(), bookRequestModel.getAuthor(), true);
         return commandGateway.sendAndWait(command);
     }
