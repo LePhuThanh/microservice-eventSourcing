@@ -1,8 +1,10 @@
 package com.phelim.employeeservice.command.aggregate;
 
 import com.phelim.employeeservice.command.command.CreateEmployeeCommand;
+import com.phelim.employeeservice.command.command.DeleteEmployeeCommand;
 import com.phelim.employeeservice.command.command.UpdateEmployeeCommand;
 import com.phelim.employeeservice.command.event.EmployeeCreatedEvent;
+import com.phelim.employeeservice.command.event.EmployeeDeletedEvent;
 import com.phelim.employeeservice.command.event.EmployeeUpdatedEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -55,4 +57,15 @@ public class EmployeeAggregate {
         this.isDisciplined = event.getDisciplined();
     }
 
+    @CommandHandler
+    public void handle(DeleteEmployeeCommand command){
+        EmployeeDeletedEvent event = new EmployeeDeletedEvent();
+        BeanUtils.copyProperties(command, event);
+        AggregateLifecycle.apply(event);
+    }
+
+    @EventSourcingHandler
+    public void on(DeleteEmployeeCommand event){
+        this.id = event.getId();
+    }
 }

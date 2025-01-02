@@ -1,6 +1,7 @@
 package com.phelim.employeeservice.command.controller;
 
 import com.phelim.employeeservice.command.command.CreateEmployeeCommand;
+import com.phelim.employeeservice.command.command.DeleteEmployeeCommand;
 import com.phelim.employeeservice.command.command.UpdateEmployeeCommand;
 import com.phelim.employeeservice.command.model.CreateEmployeeModel;
 import com.phelim.employeeservice.command.model.UpdateEmployeeModel;
@@ -30,6 +31,11 @@ public class EmployeeCommandController {
         return commandGateway.sendAndWait(command);
     }
 
-
+    @DeleteMapping("/{employeeId}")
+    public String deletedEmployee(@Valid @PathVariable String employeeId){
+        DeleteEmployeeCommand command =
+                new DeleteEmployeeCommand(employeeId);
+        return commandGateway.sendAndWait(command);
+    }
 
 }
