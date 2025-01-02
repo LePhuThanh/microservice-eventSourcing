@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af461105-81a2-441d-905d-f94c8df02bb4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employeeservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/employeeservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employeeservice/src/main/java/com/phelim/employeeservice/EmployeeserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/employeeservice/src/main/java/com/phelim/employeeservice/EmployeeserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employeeservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/employeeservice/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.BookserviceApplication">
+  <component name="RunManager" selected="Application.EmployeeserviceApplication">
     <configuration name="BookserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.phelim.bookservice.BookserviceApplication" />
       <module name="bookservice" />
@@ -84,8 +84,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EmployeeserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.phelim.employeeservice.EmployeeserviceApplication" />
+      <module name="employeeservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.phelim.employeeservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EmployeeserviceApplication" />
         <item itemvalue="Application.BookserviceApplication" />
         <item itemvalue="Application.DiscoveryserverApplication" />
       </list>
