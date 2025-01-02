@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="discoveryserver" />
+        <module name="commonservice" />
       </profile>
       <profile name="Annotation profile for bookservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -23,6 +24,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="bookservice" options="-parameters" />
+      <module name="commonservice" options="-parameters" />
       <module name="discoveryserver" options="-parameters" />
     </option>
   </component>
