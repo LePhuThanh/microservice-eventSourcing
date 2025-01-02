@@ -1,7 +1,9 @@
 package com.phelim.employeeservice.command.aggregate;
 
 import com.phelim.employeeservice.command.command.CreateEmployeeCommand;
+import com.phelim.employeeservice.command.command.UpdateEmployeeCommand;
 import com.phelim.employeeservice.command.event.EmployeeCreatedEvent;
+import com.phelim.employeeservice.command.event.EmployeeUpdatedEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
@@ -37,6 +39,20 @@ public class EmployeeAggregate {
         this.isDisciplined = event.getDisciplined();
     }
 
+    @CommandHandler
+    public void handle(UpdateEmployeeCommand command){
+        EmployeeUpdatedEvent event = new EmployeeUpdatedEvent();
+        BeanUtils.copyProperties(command, event);
+        AggregateLifecycle.apply(event);
+    }
 
+    @EventSourcingHandler
+    public void on(UpdateEmployeeCommand event){
+        this.id = event.getId();
+        this.firstName = event.getFirstName();
+        this.lastName = event.getLastName();
+        this.Kin = event.getKin();
+        this.isDisciplined = event.getDisciplined();
+    }
 
 }
