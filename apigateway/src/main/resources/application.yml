@@ -3,7 +3,14 @@ server:
 
 spring:
   application:
-    name:gateway-service
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: employeeservice
+          uri: http://localhost:9002
+          predicates:
+            - Path=/api/v1/employees/**
 eureka:
   instance:
     hostname: localhost
