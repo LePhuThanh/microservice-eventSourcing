@@ -6,9 +6,12 @@ spring:
     name: gateway-service
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: employeeservice
-          uri: http://localhost:9002
+          uri: lb://employeeservice
           predicates:
             - Path=/api/v1/employees/**
 eureka:

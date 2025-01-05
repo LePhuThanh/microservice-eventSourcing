@@ -38,6 +38,9 @@ public class EmployeeQueryController {
     )
     @GetMapping("get-all-employees")
     public List<EmployeeResponseModel> getAllEmployee(@RequestParam(name = "Disciplined",required = false, defaultValue = "false") Boolean isDisciplined){
+//        log.info("Calling to getAllEmployee");
+        System.out.println("Calling to getAllEmployee");
+
         GetAllEmployeeQuery query = new GetAllEmployeeQuery(isDisciplined);
         return queryGateway.
                 query(query, ResponseTypes.multipleInstancesOf(EmployeeResponseModel.class)).join();
