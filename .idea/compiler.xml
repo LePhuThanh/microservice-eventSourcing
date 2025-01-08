@@ -11,7 +11,7 @@
         <module name="discoveryserver" />
         <module name="commonservice" />
       </profile>
-      <profile name="Annotation profile for employeeservice" enabled="true">
+      <profile name="Annotation profile for notificationservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -19,6 +19,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="employeeservice" />
+        <module name="notificationservice" />
         <module name="bookservice" />
       </profile>
     </annotationProcessing>
@@ -30,6 +31,7 @@
       <module name="commonservice" options="-parameters" />
       <module name="discoveryserver" options="-parameters" />
       <module name="employeeservice" options="-parameters" />
+      <module name="notificationservice" options="-parameters" />
     </option>
   </component>
 </project>
