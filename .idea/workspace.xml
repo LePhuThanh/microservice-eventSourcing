@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af461105-81a2-441d-905d-f94c8df02bb4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/query/controller/BookQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/query/controller/BookQueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commonservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notificationservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notificationservice/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,20 +44,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Visual_Studio_Code/Udemy/BookLibrary/eventSourcing/notificationservice/pom.xml",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Visual_Studio_Code/Udemy/BookLibrary/eventSourcing/notificationservice/pom.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.NotificationserviceApplication">
+}</component>
+  <component name="RunManager" selected="Application.BookserviceApplication">
     <configuration name="ApigatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.phelim.apigateway.ApigatewayApplication" />
       <module name="apigateway" />
@@ -71,12 +71,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiscoveryserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.phelim.discoveryserver.DiscoveryserverApplication" />
-      <module name="discoveryserver" />
+    <configuration name="BookserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.phelim.bookservice.BookserviceApplication" />
+      <module name="bookservice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.phelim.discoveryserver.*" />
+          <option name="PATTERN" value="com.phelim.bookservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,15 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Employeeservice1" type="Application" factoryName="Application" temporary="true">
-      <envs>
-        <env name="server.port" value="9003" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.phelim.employeeservice.EmployeeserviceApplication" />
-      <module name="employeeservice" />
+    <configuration name="DiscoveryserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.phelim.discoveryserver.DiscoveryserverApplication" />
+      <module name="discoveryserver" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.phelim.apigateway.*" />
+          <option name="PATTERN" value="com.phelim.discoveryserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,19 +124,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.BookserviceApplication" />
       <item itemvalue="Application.NotificationserviceApplication" />
       <item itemvalue="Application.ApigatewayApplication" />
-      <item itemvalue="Application.Employeeservice1" />
       <item itemvalue="Application.DiscoveryserverApplication" />
       <item itemvalue="Application.EmployeeserviceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BookserviceApplication" />
         <item itemvalue="Application.NotificationserviceApplication" />
+        <item itemvalue="Application.DiscoveryserverApplication" />
         <item itemvalue="Application.ApigatewayApplication" />
         <item itemvalue="Application.EmployeeserviceApplication" />
-        <item itemvalue="Application.DiscoveryserverApplication" />
-        <item itemvalue="Application.Employeeservice1" />
       </list>
     </recent_temporary>
   </component>
