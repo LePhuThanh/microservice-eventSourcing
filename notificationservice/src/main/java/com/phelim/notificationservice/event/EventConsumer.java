@@ -11,6 +11,9 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+import java.util.Map;
+
 //@Slf4j
 @Component
 public class EventConsumer {
@@ -57,4 +60,17 @@ public class EventConsumer {
 
         emailService.sendEmail(message, "Thanks for support me", filledTemplate, true, null);
     }
+
+    @KafkaListener(topics = "emailTemplate", containerFactory = "kafkaListenerContainerFactory")
+    public void listenEmailTemplate(String message) {
+        //log.info("Received Message: " + message);
+        System.out.println("Received Email Template Message: " + message);
+
+        //Add variable to placeholders whose value can change
+        Map<String,Object> placeholders = new HashMap<>();
+        placeholders.put("name", "Phelim's friend");
+
+        emailService.sendEmailWithTemplate(message, "Welcome to Christmas", "emailTemplate.ftl", placeholders, null );
+    }
+
 }
