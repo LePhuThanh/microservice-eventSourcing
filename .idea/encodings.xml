@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/apigateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bookservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bookservice/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/borrowingservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/borrowingservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commonservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commonservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/discoveryserver/src/main/java" charset="UTF-8" />
