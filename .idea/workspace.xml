@@ -121,11 +121,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ApigatewayApplication" />
       <item itemvalue="Application.BookserviceApplication" />
+      <item itemvalue="Application.NotificationserviceApplication" />
+      <item itemvalue="Application.ApigatewayApplication" />
       <item itemvalue="Application.DiscoveryserverApplication" />
       <item itemvalue="Application.EmployeeserviceApplication" />
-      <item itemvalue="Application.NotificationserviceApplication" />
     </list>
     <recent_temporary>
       <list>
