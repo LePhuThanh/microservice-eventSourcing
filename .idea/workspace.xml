@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af461105-81a2-441d-905d-f94c8df02bb4" name="Changes" comment="" />
+    <list default="true" id="af461105-81a2-441d-905d-f94c8df02bb4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/borrowingservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/borrowingservice/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
