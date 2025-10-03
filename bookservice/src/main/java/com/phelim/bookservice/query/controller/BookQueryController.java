@@ -2,7 +2,8 @@ package com.phelim.bookservice.query.controller;
 
 import com.phelim.bookservice.query.model.BookResponseModel;
 import com.phelim.bookservice.query.queries.GetAllBookQuery;
-import com.phelim.bookservice.query.queries.GetBookDetailQuery;
+import com.phelim.commonservice.model.BookResponseCommonModel;
+import com.phelim.commonservice.queries.GetBookDetailQuery;
 import com.phelim.commonservice.services.KafkaService;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
@@ -10,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 @RestController
 @RequestMapping("/api/v1/books")
@@ -33,9 +33,9 @@ public class BookQueryController {
     }
 
     @GetMapping("{bookId}")
-    public BookResponseModel getDetail(@PathVariable String bookId){
+    public BookResponseCommonModel getDetail(@PathVariable String bookId){
         GetBookDetailQuery query = new GetBookDetailQuery(bookId);
-        return queryGateway.query(query, ResponseTypes.instanceOf(BookResponseModel.class)).join();
+        return queryGateway.query(query, ResponseTypes.instanceOf(BookResponseCommonModel.class)).join();
     }
 
     //Test Kafka

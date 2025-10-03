@@ -1,12 +1,12 @@
-package com.phelim.bookservice.query.queries;
+package com.phelim.borrowingservice.command.event;
 
-
-public class GetBookDetailQuery {
+public class BorrowingDeletedEvent {
     private String id;
 
-    public GetBookDetailQuery() {
+    public BorrowingDeletedEvent() {
     }
-    public GetBookDetailQuery(String id) {
+
+    public BorrowingDeletedEvent(String id) {
         this.id = id;
     }
 

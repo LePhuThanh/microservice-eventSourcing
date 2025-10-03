@@ -11,7 +11,7 @@
         <module name="discoveryserver" />
         <module name="commonservice" />
       </profile>
-      <profile name="Annotation profile for borrowingservice" enabled="true">
+      <profile name="Annotation profile for employeeservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -20,8 +20,8 @@
         </processorPath>
         <module name="borrowingservice" />
         <module name="employeeservice" />
-        <module name="notificationservice" />
         <module name="bookservice" />
+        <module name="notificationservice" />
       </profile>
     </annotationProcessing>
   </component>

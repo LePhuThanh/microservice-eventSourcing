@@ -1,7 +1,9 @@
 package com.phelim.borrowingservice.command.aggregate;
 
 import com.phelim.borrowingservice.command.command.CreateBorrowingCommand;
+import com.phelim.borrowingservice.command.command.DeleteBorrowingCommand;
 import com.phelim.borrowingservice.command.event.BorrowingCreatedEvent;
+import com.phelim.borrowingservice.command.event.BorrowingDeletedEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
@@ -30,6 +32,11 @@ public class BorrowingAggregate {
         AggregateLifecycle.apply(borrowingCreatedEvent);
     }
 
+    @CommandHandler
+    public void handle(DeleteBorrowingCommand deleteBorrowingCommand){
+        BorrowingDeletedEvent borrowingDeletedEvent = new BorrowingDeletedEvent(deleteBorrowingCommand.getId());
+        AggregateLifecycle.apply(borrowingDeletedEvent); // Bc there is only 1 property, there is no need to BeanUtils.copyProperties(0
+    }
     //---------------------------Event Listening-------------------
 
     @EventSourcingHandler
@@ -38,5 +45,10 @@ public class BorrowingAggregate {
         this.bookId = borrowingCreatedEvent.getBookId();
         this.employeeId = borrowingCreatedEvent.getEmployeeId();
         this.borrowingDate = borrowingCreatedEvent.getBorrowingDate();
+    }
+
+    @EventSourcingHandler
+    public void on(BorrowingDeletedEvent borrowingDeletedEvent){
+        this.id = borrowingDeletedEvent.getId();
     }
 }

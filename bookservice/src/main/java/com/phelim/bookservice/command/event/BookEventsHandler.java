@@ -3,6 +3,7 @@ package com.phelim.bookservice.command.event;
 
 import com.phelim.bookservice.command.data.Book;
 import com.phelim.bookservice.command.data.BookRepository;
+import com.phelim.commonservice.event.BookUpdateStatusEvent;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,4 +54,14 @@ public class BookEventsHandler {
 //        bookRepository.findById(bookDeletedEvent.getId()).ifPresent(book -> bookRepository.delete(book));
 //        bookRepository.findById(bookDeletedEvent.getId()).ifPresent(bookRepository::delete);
     }
+
+    @EventHandler
+    public void on(BookUpdateStatusEvent bookUpdateStatusEvent){
+        Optional<Book> oldBook = bookRepository.findById(bookUpdateStatusEvent.getBookId());
+        oldBook.ifPresent(book -> {
+            book.setIsReady(bookUpdateStatusEvent.getIsReady());
+            bookRepository.save(book);
+        });
+    }
+
 }
