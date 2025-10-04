@@ -2,10 +2,15 @@ package com.phelim.borrowingservice.command.saga;
 
 import com.phelim.borrowingservice.command.command.DeleteBorrowingCommand;
 import com.phelim.borrowingservice.command.event.BorrowingCreatedEvent;
+import com.phelim.borrowingservice.command.event.BorrowingDeletedEvent;
+import com.phelim.commonservice.command.RollBackStatusBookCommand;
 import com.phelim.commonservice.command.UpdateStatusBookCommand;
+import com.phelim.commonservice.event.BookRollBackStatusEvent;
 import com.phelim.commonservice.event.BookUpdateStatusEvent;
 import com.phelim.commonservice.model.BookResponseCommonModel;
+import com.phelim.commonservice.model.EmployeeResponseCommonModel;
 import com.phelim.commonservice.queries.GetBookDetailQuery;
+import com.phelim.commonservice.queries.GetDetailEmployeeQuery;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.modelling.saga.SagaEventHandler;
@@ -46,12 +51,43 @@ public class BorrowingSaga {
     @SagaEventHandler(associationProperty = "bookId")
     private void handler(BookUpdateStatusEvent event){
         System.out.println("log =================> BookUpdateStatusEvent in saga for BookId: " + event.getBookId());
-        SagaLifecycle.end();
+        try{
+            GetDetailEmployeeQuery getDetailEmployeeQuery = new GetDetailEmployeeQuery(event.getEmployeeId());
+            EmployeeResponseCommonModel employeeModel = queryGateway.query(getDetailEmployeeQuery,
+                    ResponseTypes.instanceOf(EmployeeResponseCommonModel.class)).join();
+            if(employeeModel.getDisciplined()){
+                throw new Exception("The employee has been disciplined");
+            }else {
+                System.out.println("log =================> Book borrowed successfully");
+                SagaLifecycle.end(); // => Pass
+            }
+        }catch (Exception ex){
+            rollBackBookStatus(event.getBookId(), event.getEmployeeId(), event.getBorrowingId());
+            System.out.println(ex.getMessage());
+        }
     }
 
     private void rollbackBorrowingRecord(String id){
         DeleteBorrowingCommand deleteBorrowingCommand = new DeleteBorrowingCommand(id);
         commandGateway.sendAndWait(deleteBorrowingCommand);
+    }
+
+    private void rollBackBookStatus(String bookId, String employeeId, String borrowingId){
+        SagaLifecycle.associateWith("bookId", bookId);
+        RollBackStatusBookCommand rollBackStatusBookCommand = new RollBackStatusBookCommand(bookId, true, employeeId, borrowingId);
+        commandGateway.sendAndWait(rollBackStatusBookCommand);
+    }
+    @SagaEventHandler(associationProperty = "bookId")
+    private void handler(BookRollBackStatusEvent bookRollBackStatusEvent){
+        System.out.println("log =================> BookRollBackStatusEvent in saga for BookId: " + bookRollBackStatusEvent.getBookId());
+        rollbackBorrowingRecord(bookRollBackStatusEvent.getBorrowingId());
+    }
+
+    @SagaEventHandler(associationProperty = "id")
+    private void handle(BorrowingDeletedEvent borrowingDeletedEvent){
+        System.out.println("log =================> BorrowingDeletedEvent in saga for BookId: " + borrowingDeletedEvent.getId());
         SagaLifecycle.end();
     }
+
+
 }

@@ -3,6 +3,7 @@ package com.phelim.bookservice.command.event;
 
 import com.phelim.bookservice.command.data.Book;
 import com.phelim.bookservice.command.data.BookRepository;
+import com.phelim.commonservice.event.BookRollBackStatusEvent;
 import com.phelim.commonservice.event.BookUpdateStatusEvent;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.BeanUtils;
@@ -60,6 +61,15 @@ public class BookEventsHandler {
         Optional<Book> oldBook = bookRepository.findById(bookUpdateStatusEvent.getBookId());
         oldBook.ifPresent(book -> {
             book.setIsReady(bookUpdateStatusEvent.getIsReady());
+            bookRepository.save(book);
+        });
+    }
+
+    @EventHandler
+    public void on(BookRollBackStatusEvent bookRollBackStatusEvent){
+        Optional<Book> oldBook = bookRepository.findById(bookRollBackStatusEvent.getBookId());
+        oldBook.ifPresent( book -> {
+            book.setIsReady(bookRollBackStatusEvent.getIsReady());
             bookRepository.save(book);
         });
     }

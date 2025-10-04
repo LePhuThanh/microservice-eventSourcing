@@ -1,9 +1,9 @@
 package com.phelim.employeeservice.query.controller;
 
+import com.phelim.commonservice.model.EmployeeResponseCommonModel;
 import com.phelim.employeeservice.query.model.EmployeeResponseModel;
 import com.phelim.employeeservice.query.queries.GetAllEmployeeQuery;
-import com.phelim.employeeservice.query.queries.GetDetailEmployeeQuery;
-import io.swagger.v3.oas.annotations.Hidden;
+import com.phelim.commonservice.queries.GetDetailEmployeeQuery;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -48,9 +48,9 @@ public class EmployeeQueryController {
 
     //@Hidden
     @GetMapping("/{employeeId}")
-    public EmployeeResponseModel getDetailEmployee(@PathVariable String employeeId){
+    public EmployeeResponseCommonModel getDetailEmployee(@PathVariable String employeeId){
         GetDetailEmployeeQuery query = new GetDetailEmployeeQuery(employeeId);
         return queryGateway.
-                query(query, ResponseTypes.instanceOf(EmployeeResponseModel.class)).join();
+                query(query, ResponseTypes.instanceOf(EmployeeResponseCommonModel.class)).join();
     }
 }

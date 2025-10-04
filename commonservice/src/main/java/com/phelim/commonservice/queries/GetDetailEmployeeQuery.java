@@ -1,4 +1,4 @@
-package com.phelim.employeeservice.query.queries;
+package com.phelim.commonservice.queries;
 
 public class GetDetailEmployeeQuery {
     private String id;

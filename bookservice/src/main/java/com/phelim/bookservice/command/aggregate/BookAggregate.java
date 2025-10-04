@@ -6,7 +6,9 @@ import com.phelim.bookservice.command.command.UpdateBookCommand;
 import com.phelim.bookservice.command.event.BookCreateEvent;
 import com.phelim.bookservice.command.event.BookDeletedEvent;
 import com.phelim.bookservice.command.event.BookUpdatedEvent;
+import com.phelim.commonservice.command.RollBackStatusBookCommand;
 import com.phelim.commonservice.command.UpdateStatusBookCommand;
+import com.phelim.commonservice.event.BookRollBackStatusEvent;
 import com.phelim.commonservice.event.BookUpdateStatusEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -56,6 +58,12 @@ public class BookAggregate {
         BeanUtils.copyProperties(updateStatusBookCommand, bookUpdateStatusEvent);
         AggregateLifecycle.apply(bookUpdateStatusEvent);
     }
+    @CommandHandler
+    public void handler(RollBackStatusBookCommand rollBackStatusBookCommand){
+        BookRollBackStatusEvent bookRollBackStatusEvent = new BookRollBackStatusEvent();
+        BeanUtils.copyProperties(rollBackStatusBookCommand, bookRollBackStatusEvent);
+        AggregateLifecycle.apply(bookRollBackStatusEvent);
+    }
 
     //=======================================Event Listening=====================================
     @EventSourcingHandler
@@ -84,4 +92,11 @@ public class BookAggregate {
         this.id = bookUpdateStatusEvent.getBookId();
         this.isReady = bookUpdateStatusEvent.getIsReady();
     }
+
+    @EventSourcingHandler
+    public void on(BookRollBackStatusEvent bookRollBackStatusEvent){
+        this.id = bookRollBackStatusEvent.getBookId();
+        this.isReady = bookRollBackStatusEvent.getIsReady();
+    }
+
 }

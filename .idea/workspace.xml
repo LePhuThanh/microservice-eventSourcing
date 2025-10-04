@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af461105-81a2-441d-905d-f94c8df02bb4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/aggregate/BookAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/aggregate/BookAggregate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/event/BookEventsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/command/event/BookEventsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/query/controller/BookQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/query/controller/BookQueryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/query/projection/BookProjection.java" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/query/projection/BookProjection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookservice/src/main/java/com/phelim/bookservice/query/queries/GetBookDetailQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/commonservice/src/main/java/com/phelim/commonservice/queries/GetBookDetailQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/borrowingservice/src/main/java/com/phelim/borrowingservice/command/aggregate/BorrowingAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/borrowingservice/src/main/java/com/phelim/borrowingservice/command/aggregate/BorrowingAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/borrowingservice/src/main/java/com/phelim/borrowingservice/command/event/BorrowingEventsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/borrowingservice/src/main/java/com/phelim/borrowingservice/command/event/BorrowingEventsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commonservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/borrowingservice/src/main/java/com/phelim/borrowingservice/command/saga/BorrowingSaga.java" beforeDir="false" afterPath="$PROJECT_DIR$/borrowingservice/src/main/java/com/phelim/borrowingservice/command/saga/BorrowingSaga.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employeeservice/src/main/java/com/phelim/employeeservice/query/controller/EmployeeQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/employeeservice/src/main/java/com/phelim/employeeservice/query/controller/EmployeeQueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employeeservice/src/main/java/com/phelim/employeeservice/query/projection/EmployeeProjection.java" beforeDir="false" afterPath="$PROJECT_DIR$/employeeservice/src/main/java/com/phelim/employeeservice/query/projection/EmployeeProjection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employeeservice/src/main/java/com/phelim/employeeservice/query/queries/GetDetailEmployeeQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/commonservice/src/main/java/com/phelim/commonservice/queries/GetDetailEmployeeQuery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,8 +141,8 @@
       <list>
         <item itemvalue="Application.BorrowingserviceApplication" />
         <item itemvalue="Application.BookserviceApplication" />
-        <item itemvalue="Application.DiscoveryserverApplication" />
         <item itemvalue="Application.EmployeeserviceApplication" />
+        <item itemvalue="Application.DiscoveryserverApplication" />
         <item itemvalue="Application.NotificationserviceApplication" />
       </list>
     </recent_temporary>
