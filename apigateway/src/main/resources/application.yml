@@ -26,6 +26,17 @@ spring:
                 redis-rate-limiter.burstCapacity: 20
                 redis-rate-limiter.requestedTokens: 1
             - KeyAuthFilter
+        - id: bookservice
+          uri: lb://bookservice
+          predicates:
+            - Path=/api/v1/books/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                redis-rate-limiter.requestedTokens: 1
+            - KeyAuthFilter
 #Manual Routing
 #spring:
 #  application:
