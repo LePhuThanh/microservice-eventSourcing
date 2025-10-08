@@ -9,6 +9,18 @@ services:
             - "8761:8761"
         networks:
             - microservice-networks
+    axonserver:
+        image: "axoniq/axonserver:latest"
+        hostname: axonserver
+        container_name: axonserver
+        environment:
+            - "AXONIQ_AXONSERVER_STANDALONE=TRUE"
+        ports:
+            - "8024:8024"
+            - "8124:8124"
+            - "8224:8224"
+        networks:
+            - microservice-networks
     bookservice:
         build:
             context: .
@@ -22,18 +34,25 @@ services:
             - axonserver
         environment:
             - "AXONIQ_AXONSERVER_SERVERS=axonserver:8024"
-    axonserver:
-        image: "axoniq/axonserver:latest"
-        hostname: axonserver
-        container_name: axonserver
-        environment:
-            - "AXONIQ_AXONSERVER_STANDALONE=TRUE"
+    redis:
+        image: redis:latest
+        restart: always
+        hostname: redis
         ports:
-            - "8024:8024"
-            - "8124:8124"
-            - "8224:8224"
+            - "6379:6379"
         networks:
             - microservice-networks
+    apigateway:
+        build:
+            context: .
+            dockerfile: apigateway/Dockerfile
+        ports:
+            - "8080:8080"
+        networks:
+            - microservice-networks
+        depends_on:
+            - discoveryserver
+            - redis
 networks:
     microservice-networks:
         driver: bridge

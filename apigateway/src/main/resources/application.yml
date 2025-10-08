@@ -1,3 +1,64 @@
+#server:
+#  port: 8080
+#
+##Automation routing
+#spring:
+#  application:
+#    name: gateway-service
+#  data:
+#    redis:
+#      port: 6379
+#      host: localhost
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: employeeservice
+#          uri: lb://employeeservice
+#          predicates:
+#            - Path=/api/v1/employees/**
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 10
+#                redis-rate-limiter.burstCapacity: 20
+#                redis-rate-limiter.requestedTokens: 1
+#            - KeyAuthFilter
+#        - id: bookservice
+#          uri: lb://bookservice
+#          predicates:
+#            - Path=/api/v1/books/**
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 10
+#                redis-rate-limiter.burstCapacity: 20
+#                redis-rate-limiter.requestedTokens: 1
+#            - KeyAuthFilter
+##Manual Routing
+##spring:
+##  application:
+##    name: gateway-service
+##  cloud:
+##    gateway:
+##      routes:
+##        - id: employeeservice
+##          uri: http://localhost:9002
+##          predicates:
+##            - Path=/api/v1/employees/**
+#
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#      register-with-eureka: true
+#      fetch-registry: true
+
+#-----------------------------------------Deploy with Docker Compose------------------------------------
 server:
   port: 8080
 
@@ -51,9 +112,9 @@ spring:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: discoveryserver
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://discoveryserver:8761/eureka
       register-with-eureka: true
       fetch-registry: true
