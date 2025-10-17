@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af461105-81a2-441d-905d-f94c8df02bb4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,20 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Visual_Studio_Code/Udemy/BookLibrary/eventSourcing/borrowingservice/pom.xml&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Visual_Studio_Code/Udemy/BookLibrary/eventSourcing/userservice/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
-}</component>
-  <component name="RunManager" selected="Application.BorrowingserviceApplication">
+}]]></component>
+  <component name="RunManager" selected="Application.UserserviceApplication">
     <configuration name="BookserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.phelim.bookservice.BookserviceApplication" />
       <module name="bookservice" />
@@ -111,12 +114,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotificationserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.phelim.notificationservice.NotificationserviceApplication" />
-      <module name="notificationservice" />
+    <configuration name="UserserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.phelim.userservice.UserserviceApplication" />
+      <module name="userservice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.phelim.notificationservice.*" />
+          <option name="PATTERN" value="com.phelim.userservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,19 +128,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.UserserviceApplication" />
       <item itemvalue="Application.BorrowingserviceApplication" />
       <item itemvalue="Application.BookserviceApplication" />
       <item itemvalue="Application.DiscoveryserverApplication" />
       <item itemvalue="Application.EmployeeserviceApplication" />
-      <item itemvalue="Application.NotificationserviceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UserserviceApplication" />
+        <item itemvalue="Application.DiscoveryserverApplication" />
         <item itemvalue="Application.BorrowingserviceApplication" />
         <item itemvalue="Application.BookserviceApplication" />
         <item itemvalue="Application.EmployeeserviceApplication" />
-        <item itemvalue="Application.DiscoveryserverApplication" />
-        <item itemvalue="Application.NotificationserviceApplication" />
       </list>
     </recent_temporary>
   </component>
