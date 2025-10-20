@@ -9,17 +9,19 @@ public class CreateUserRequestDTO {
     private String lastName;
     private LocalDate dob;
     private String name;
+    private String password;
 
     public CreateUserRequestDTO() {
     }
 
-    public CreateUserRequestDTO(String email, String username, String firstName, String lastName, LocalDate dob, String name) {
+    public CreateUserRequestDTO(String email, String username, String firstName, String lastName, LocalDate dob, String name, String password) {
         this.email = email;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
         this.name = name;
+        this.password = password;
     }
 
     public String getEmail() {
@@ -68,5 +70,13 @@ public class CreateUserRequestDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
