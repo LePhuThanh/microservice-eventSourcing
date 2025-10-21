@@ -1,19 +1,22 @@
 package com.phelim.userservice.dto.identity;
 
-public class TokenExchangeParam {
+public class UserTokenExchangeParam {
     private String grant_type;
     private String client_id;
     private String client_secret;
     private String scope;
-
-    public TokenExchangeParam() {
+    private String username;
+    private String password;
+    public UserTokenExchangeParam() {
     }
 
-    public TokenExchangeParam(String grant_type, String client_id, String client_secret, String scope) {
+    public UserTokenExchangeParam(String grant_type, String client_id, String client_secret, String scope, String username, String password) {
         this.grant_type = grant_type;
         this.client_id = client_id;
         this.client_secret = client_secret;
         this.scope = scope;
+        this.username = username;
+        this.password = password;
     }
 
     public String getGrant_type() {
@@ -48,13 +51,29 @@ public class TokenExchangeParam {
         this.scope = scope;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     //Builder
-    //Using generics to support extends builder
     public static class Builder {
-        protected String grant_type;
-        protected String client_id;
-        protected String client_secret;
-        protected String scope;
+        private String grant_type;
+        private String client_id;
+        private String client_secret;
+        private String scope;
+        private String username;
+        private String password;
 
         public Builder grantType(String grant_type) {
             this.grant_type = grant_type;
@@ -76,14 +95,24 @@ public class TokenExchangeParam {
             return this;
         }
 
-        public TokenExchangeParam build() {
-            return new TokenExchangeParam(grant_type, client_id, client_secret, scope);
+        public Builder username(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public UserTokenExchangeParam build() {
+            return new UserTokenExchangeParam(
+                    grant_type, client_id, client_secret, scope, username, password
+            );
         }
     }
 
-    // Create Builder object
     public static Builder builder() {
         return new Builder();
     }
-
 }

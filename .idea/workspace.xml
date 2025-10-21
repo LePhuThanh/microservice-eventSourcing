@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="af461105-81a2-441d-905d-f94c8df02bb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/UserserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/UserserviceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/dto/CreateUserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/dto/CreateUserRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/dto/identity/TokenExchangeParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/dto/identity/TokenExchangeParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/repository/IdentityClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/repository/IdentityClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/userservice/src/main/java/com/phelim/userservice/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/userservice/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,5 +154,12 @@
       <updated>1735117915720</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="feign.ReflectiveFeign$FeignInvocationHandler" memberName="target" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

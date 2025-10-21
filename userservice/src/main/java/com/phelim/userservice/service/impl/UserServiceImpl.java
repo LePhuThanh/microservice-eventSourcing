@@ -45,7 +45,7 @@ public class UserServiceImpl implements IUserService {
                 .build()
         );
 
-        log.info("Token info: ", token);
+        log.info("=========================> Token info: ", token);
 
         //Call CreateUser API
         var creationResponse = identityClient.createUser(UserCreationParam.builder()
@@ -64,7 +64,7 @@ public class UserServiceImpl implements IUserService {
 
         //Extract Use_Id
         String userId = extractUserId(creationResponse);
-        log.info("UserId {}" , userId);
+        log.info("=========================> UserId {}" , userId);
 
         //Save to DB
         User user = new User();

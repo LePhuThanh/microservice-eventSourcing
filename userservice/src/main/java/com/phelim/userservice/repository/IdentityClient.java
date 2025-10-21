@@ -1,8 +1,6 @@
 package com.phelim.userservice.repository;
 
-import com.phelim.userservice.dto.identity.TokenExchangeParam;
-import com.phelim.userservice.dto.identity.TokenExchangeResponse;
-import com.phelim.userservice.dto.identity.UserCreationParam;
+import com.phelim.userservice.dto.identity.*;
 import feign.QueryMap;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
@@ -17,11 +15,16 @@ public interface IdentityClient {
             value = "/realms/${idp.realm}/protocol/openid-connect/token",
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE
     )
-    TokenExchangeResponse exchangeClientToken(@QueryMap() TokenExchangeParam param);
+    TokenExchangeResponse exchangeClientToken(@QueryMap TokenExchangeParam param);
 
     @PostMapping(
             value = "/admin/realms/${idp.realm}/users",
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
     ResponseEntity<?> createUser(@RequestBody() UserCreationParam body, @RequestHeader("authorization") String token);
+    @PostMapping(
+            value = "/realms/${idp.realm}/protocol/openid-connect/token", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE
+    )
+    TokenExchangeLoginResponse exchangeUserToken(@QueryMap UserTokenExchangeParam param);
+
 }
