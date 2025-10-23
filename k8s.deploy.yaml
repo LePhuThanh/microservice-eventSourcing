@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discoveryserver-deployment
+  labels:
+    app: discoveryserver
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: discoveryserver
+  template:
+    metadata:
+      labels:
+        app: discoveryserver
+    spec:
+      containers:
+      - name: discoveryserver
+        image: eventsourcing-discoveryserver
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8761
