@@ -24,4 +24,4 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
             docker compose -f docker-compose.yml build discoveryserver
-            docekr compose -f docker-compose.yml push discoveryserver
+            docker compose -f docker-compose.yml push discoveryserver
