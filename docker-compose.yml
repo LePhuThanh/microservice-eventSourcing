@@ -186,7 +186,7 @@ services:
         build:
             context: .
             dockerfile: discoveryserver/Dockerfile
-        image: "${DOCKER_USERNAME}/discoveryserver:lastest" #Necessary
+        image: "${DOCKER_USERNAME}/discoveryserver:latest" #Necessary
         ports:
             - "8761:8761"
         networks:
