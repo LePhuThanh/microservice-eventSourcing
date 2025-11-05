@@ -153,6 +153,32 @@
 
 #-----------------------------------------------------------------------Deploy Discoveryserver & APIGateway with K8s-------------------------------------------------------------------------------------
 
+# version: "3.8"
+
+# services:
+#     discoveryserver:
+#         build:
+#             context: .
+#             dockerfile: discoveryserver/Dockerfile
+#         ports:
+#             - "8761:8761"
+#         networks:
+#             - microservice-networks
+#     apigateway:
+#         build:
+#             context: .
+#             dockerfile: apigateway/Dockerfile
+#         ports:
+#             - "8080:8080"
+#         networks:
+#             - microservice-networks
+#         depends_on:
+#             - discoveryserver
+# networks:
+#     microservice-networks:
+#         driver: bridge
+
+#-----------------------------------------------------------------------CICI Pipeline (Deploy Discoveryserver)-------------------------------------------------------------------------------------
 version: "3.8"
 
 services:
@@ -160,6 +186,7 @@ services:
         build:
             context: .
             dockerfile: discoveryserver/Dockerfile
+        image: "${DOCKER_USERNAME}/discoveryserver:lastest" #Necessary
         ports:
             - "8761:8761"
         networks:
