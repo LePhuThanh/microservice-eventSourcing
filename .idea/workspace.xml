@@ -126,10 +126,10 @@
     </configuration>
     <list>
       <item itemvalue="Application.ApigatewayApplication" />
-      <item itemvalue="Application.UserserviceApplication" />
-      <item itemvalue="Application.BorrowingserviceApplication" />
       <item itemvalue="Application.BookserviceApplication" />
+      <item itemvalue="Application.BorrowingserviceApplication" />
       <item itemvalue="Application.DiscoveryserverApplication" />
+      <item itemvalue="Application.UserserviceApplication" />
     </list>
     <recent_temporary>
       <list>
