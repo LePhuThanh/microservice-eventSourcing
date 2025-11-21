@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/v1/discovery")
+@RequestMapping("api/v1/discoveryserver")
 public class DiscoveryServerController {
     @GetMapping
-    public String helloWorld(){
+    public String helloWorld() {
         return "The discovery server has been updated! " +
                 "Created by Phelim";
     }

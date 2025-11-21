@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af461105-81a2-441d-905d-f94c8df02bb4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bookservice/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discoveryserver/src/main/java/com/phelim/discoveryserver/controller/DiscoveryServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/discoveryserver/src/main/java/com/phelim/discoveryserver/controller/DiscoveryServerController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +62,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.UserserviceApplication">
+  <component name="RunManager" selected="Application.BookserviceApplication">
     <configuration name="ApigatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.phelim.apigateway.ApigatewayApplication" />
       <module name="apigateway" />
@@ -133,11 +137,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BookserviceApplication" />
+        <item itemvalue="Application.DiscoveryserverApplication" />
         <item itemvalue="Application.UserserviceApplication" />
         <item itemvalue="Application.ApigatewayApplication" />
-        <item itemvalue="Application.DiscoveryserverApplication" />
         <item itemvalue="Application.BorrowingserviceApplication" />
-        <item itemvalue="Application.BookserviceApplication" />
       </list>
     </recent_temporary>
   </component>
