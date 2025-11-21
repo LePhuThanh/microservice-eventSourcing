@@ -6,9 +6,11 @@ import jakarta.persistence.*;
 @Table(name = "books")
 public class Book {
     @Id
+    @Column(name = "book_id")
     private String id;
     private String name;
     private String author;
+    @Column(name = "is_ready")
     private Boolean isReady;
 
     public Book() {
